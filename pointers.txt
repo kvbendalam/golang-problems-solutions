@@ -1,0 +1,73 @@
+Pointers
+
+
+
+
+i := 5
+
+Hard disk lot of space - we need to reverse some place to hold our data why?
+
+because whenever we want to try access again I want to get that value
+
+
+To access to this i variable two methods
+
+1. By calling the variable name 
+	fmt.Println(i)
+
+2. By calling the address of the i variable
+	fmt.Println(&i) - 0xsuradf3o1k
+	fmt.Println(*i) - 5 
+	
+	
+	
+	& - Adress operator
+	* - Dereferincing operator
+
+
+package main
+
+import "fmt"
+
+func main() {
+	num := 5
+
+	fmt.Println(num)
+	fmt.Println(&num)
+}
+
+
+package main
+
+import "fmt"
+
+func main() {
+	var name = "John"
+	var ptr *string
+
+	ptr = &name
+
+	fmt.Println(*ptr)
+}
+
+
+
+structs:
+
+
+map[string]int{
+	"age":24
+}
+
+slice := []{45,2,23,1,2}
+
+
+combination of all datatypes 
+
+I want to have string, int, boolean etc
+
+Structs collection of all datatypes
+
+type - Keyword
+Name of the struct - Employee
+struct - Keyword
