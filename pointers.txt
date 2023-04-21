@@ -1,8 +1,6 @@
 Pointers
 
 
-
-
 i := 5
 
 Hard disk lot of space - we need to reverse some place to hold our data why?
