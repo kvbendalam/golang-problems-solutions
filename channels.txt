@@ -1,0 +1,48 @@
+channels
+
+
+channels are nothing but, it is communication tool between two go routines
+
+
+go routine 1 ======================== go routine 2
+
+one go routine will act as sender
+
+another go routine will act as a receiver
+
+
+package main
+
+import "fmt"
+
+func main(){
+	ch := make(chan int)
+	
+	go func(){
+		ch <- 42
+	}()
+	
+	num := <-ch
+	
+	fmt.Println(num)
+}
+
+
+to create a channle we need to use make function
+
+
+make(chan int)
+
+chan is the key word to create a channel which is of type int
+
+we can create any of channel data type
+
+make(chan string)
+
+it is a channel of string
+
+
+for sending channel <- 42
+for receiving channel 
+
+	num := <-ch

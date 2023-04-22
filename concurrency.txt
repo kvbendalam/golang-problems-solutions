@@ -1,0 +1,92 @@
+concurrency:
+
+able to handle multiple things at a time
+
+
+function f(){
+	task1()
+	>10 seconds
+	
+	
+	task2() yes we need to while task1 is going on
+	
+	> 5
+	
+	task3() yes we need to run while task2 is going on 
+
+}
+
+
+
+> 15 seconds
+
+5 seconds ()Increasign the efifienceny
+
+function task1(){
+
+	----
+	----
+	----
+	----
+	
+	taking lot of time to computer some result
+	
+	complex operation
+	
+	> 10 seconds
+}
+
+
+function task2(){
+	----
+	----
+}
+
+function task3(){
+	-----
+	-----
+	---
+}
+
+
+
+parallelism:
+
+large set of data -> we need to perfrom some operations on this large set of data
+100000 lines we want perform operations
+
+
+Multiple processsor will involve (multiple computers)
+
+
+
+
+1 -> 100 minutes 
+
+20000 -> 5 computers
+
+
+20 mins
+
+
+
+concurrency : 
+1. system included
+
+parallelism:
+multiple systems are inclued
+
+
+concurreny we can acheive in golagn
+
+
+go routines -> acheiving concurrency
+
+
+
+
+
+
+
+
+
