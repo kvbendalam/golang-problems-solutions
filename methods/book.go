@@ -9,8 +9,8 @@ type Book struct {
 }
 
 func (b Book) discount(percentage int) int {
-	res := b.price * percentage / 100
-	actualPrice := b.price - res
+	discountedAmount := b.price * percentage / 100
+	actualPrice := b.price - discountedAmount
 	return actualPrice
 }
 
