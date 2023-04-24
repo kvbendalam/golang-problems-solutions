@@ -1,0 +1,166 @@
+
+API - application programming interface
+
+http.get("/getData", func(){
+    return employees
+})
+
+
+API
+
+What is the approach we have previously?
+
+ amazon 
+
+1. Frontend (User see the code)
+2. Backend (Business logic will be implemented)
+3. Data base (it will store the data)
+
+
+Monolithic (Frontend+backend+db) -> They used to develop all these 3 into 1 project
+
+This backend logic will only useful for this application only -> we can't use it for any other application
+
+We are doing 2 times one task
+
+-> 2 times we are updating the database
+
+there is inconsistency between application and database (It is not scable and not maintainable)
+
+Advantages:
+
+Microservices:
+
+1. Frontend (web, mobile, desktop)
+
+2. Backend + db is another project ----> We can consume these apis from web, android app, ios app, desktop apps etc.
+
+
+We can consume it form any client system.
+
+
+For communication between frontend and backend we need to have a medium -> apis
+
+
+client  and server can communicate between each other
+
+
+Client will request server for particual data -> server will give corresponding data which client requested.
+
+
+
+Client and server communication we need to have apis:
+
+1. SOAP (xml based response it is going to give) -> popular before rest apis (early 2000s)
+2. UDDI
+3. wsdl
+4. REST (Representational state transfer protocol) -> json response 
+
+
+
+try to access any api it is going to give json response to us.
+
+
+Request and response:
+
+In api it is going to take as a response and it will store that data into database. (Logic needs to be written in our backend system)
+
+
+Server is going to return some data to client once we request from client side. -> response
+
+
+Employee Table:
+
+ID  NAME       SALARY    PLACE
+1.  KRISHNA    100000     Hyd
+2.  vamsi      200000     Pune
+
+Rest verbs:
+
+GET   - List all the employees we use get method
+
+we know the employee id already -> we need to get the employee details based on the id
+
+/getData/:id
+
+Browser:
+
+/getData/1 (based on path retrieving)
+
+{
+    id : 1
+    name :Krishna,
+    salary : 200000
+    place : hyd
+}
+
+
+// query parameters
+
+/getData?salary>15000
+
+{
+    //2nd object
+}
+
+POST  - New employee (Create his data) - Request body to post endpoint
+PUT - Update the existing record 
+ {
+    id : 2
+    name : "vamsi"
+    salary : 200000,
+    place :"pune"
+ }
+PATCH - 
+
+{
+    id : 2
+    palce : "pune"
+}
+
+
+DELETE - To delete the particual record or all the recoreds
+
+
+Status code:
+
+Successful:
+200 : succesful operations (get) 
+201 : creating a data in a database.
+
+Redirection:
+301 : it is redirected (whenever we call that endpoint, we need to redirect to new endpoint)
+
+
+Client error :
+400: (Bad request) -> all the information required post -> it is going to give an error
+401: (unauthorized) -> It is for authentication (only legitimate users only can access the endpoint)
+403: (Forbidden) -> admin, user -> if normal user trying to access adming related apis then 403 will give
+404: (Not found) -> When you are tyring access employee/3 (which doesn't exist in the database)
+
+
+Server error:
+500: (Internal server error) - logic is not working properly 
+501: (Not implemented) - no method implemented but you are trying to access post method 
+503: (Service unavilable) - get method, so many people are using same time this service is unavailable
+504: (Gateway timeout) -> You are tyring to access and endpoint -> it is performing some db operations (It is taking more time) ->then it is going to give gate way timeout
+
+
+
+CORS : cross origin resource sharing
+
+
+    www.abc.com   -> Server  -> we have code installed for serving the apis
+
+    www.def.com  -> client -> cross origin error
+
+
+    abc.com. -> abc.com
+
+
+To enable cors oring we need to allow def.com on abc.com
+
+allow-access-control : "def.com"
+allow-access-control : "*"
+
+
